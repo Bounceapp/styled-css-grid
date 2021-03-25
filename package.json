@@ -22,7 +22,9 @@
     "lint": "eslint .",
     "prettier": "prettier --write \"{lib,website,scripts}/*.js\"",
     "test": "jest",
-    "build": "node scripts/build",
+    "build": "npm run-script build:lib && npm run-script build:web",
+    "build:lib": "node scripts/build_lib",
+    "build:web": "node scripts/build_website",
     "watch:site": "rollup -c scripts/rollup.website.config.js -w",
     "start": "http-server website/bin",
     "semantic-release": "semantic-release"
